@@ -54,6 +54,8 @@ $(document).ready(function () {
 
                     var gifDiv = $("<div>");
                     gifDiv.addClass("gifDiv");
+                    var gifRating = $("<p>").text("Rating: " + results[i].rating);
+                    gifDiv.append(gifRating);
                     var gifImage = $("<img>");
                     gifImage.attr("src", results[i].images.fixed_height_small_still.url);
                     gifImage.attr("data-still", results[i].images.fixed_height_small_still.url);
@@ -83,11 +85,3 @@ $(document).ready(function () {
 
 
 });
-
-
-
-
-
-
-// var gifRating = $("<p>").text("Rating: " + results[i].rating);
-//                     gifDiv.append(gifRating);
