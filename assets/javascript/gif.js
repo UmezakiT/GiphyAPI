@@ -3,14 +3,14 @@ $(document).ready(function () {
     var topics = ["Animals", "dog", "cat"];
 
     function displayGifButtons() {
-        $("#gifButtonsViews").empty();
+        $("#gifButtons").empty();
         for (var i = 0; i < topics.length; i++) {
             var gifButton = $("<button>");
             gifButton.addClass("action");
-            gifButton.addClass("btn btn-primary")
+            gifButton.addClass("btn")
             gifButton.attr("data-name", topics[i]);
             gifButton.text(topics[i]);
-            $("#gifButtonsViews").append(gifButton);
+            $("#gifButtons").append(gifButton);
         }
     }
 
@@ -48,14 +48,12 @@ $(document).ready(function () {
                 $("#gifsView").empty();
                 var results = response.data;
                 if (results == "") {
-                    alert("No Gif");
+                    console.log("No Gif");
                 }
                 for (var i = 0; i < results.length; i++) {
 
                     var gifDiv = $("<div>");
                     gifDiv.addClass("gifDiv");
-                    var gifRating = $("<p>").text("Rating: " + results[i].rating);
-                    gifDiv.append(gifRating);
                     var gifImage = $("<img>");
                     gifImage.attr("src", results[i].images.fixed_height_small_still.url);
                     gifImage.attr("data-still", results[i].images.fixed_height_small_still.url);
@@ -85,3 +83,11 @@ $(document).ready(function () {
 
 
 });
+
+
+
+
+
+
+// var gifRating = $("<p>").text("Rating: " + results[i].rating);
+//                     gifDiv.append(gifRating);
